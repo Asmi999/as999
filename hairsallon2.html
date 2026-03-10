@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sri Yoshitha Hair Salon</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#fff5f7;
+}
+
+/* HEADER */
+
+header{
+background:linear-gradient(45deg,#ff4da6,#d63384);
+color:white;
+padding:30px;
+text-align:center;
+}
+
+/* NAVBAR */
+
+nav{
+position:sticky;
+top:0;
+background:#111;
+padding:12px;
+z-index:1000;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:15px;
+font-size:18px;
+text-decoration:none;
+}
+
+nav a:hover{
+color:#ff99cc;
+}
+
+/* SECTION */
+
+section{
+padding:60px 20px;
+text-align:center;
+}
+
+/* SERVICES */
+
+.services{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+margin-top:30px;
+}
+
+.card{
+background:white;
+width:230px;
+padding:25px;
+border-radius:15px;
+box-shadow:0 6px 15px rgba(0,0,0,0.2);
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.price{
+color:#d63384;
+font-weight:bold;
+margin-top:10px;
+}
+
+/* GALLERY */
+
+.gallery{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+margin-top:20px;
+}
+
+.gallery img{
+width:250px;
+height:180px;
+object-fit:cover;
+margin:10px;
+border-radius:10px;
+transition:0.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.08);
+}
+
+/* BOOKING FORM */
+
+form{
+max-width:400px;
+margin:auto;
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}
+
+input,select{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+button{
+width:100%;
+padding:12px;
+border:none;
+background:#d63384;
+color:white;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#a61e5c;
+}
+
+/* SUCCESS MESSAGE */
+
+#success{
+display:none;
+color:green;
+font-weight:bold;
+margin-top:15px;
+}
+
+/* WHATSAPP BUTTON */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 18px;
+border-radius:50px;
+text-decoration:none;
+font-size:18px;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* FOOTER */
+
+footer{
+background:#d63384;
+color:white;
+text-align:center;
+padding:15px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.services{
+flex-direction:column;
+align-items:center;
+}
+
+.gallery img{
+width:90%;
+height:200px;
+}
+
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>Sri Yoshitha Hair Salon</h1>
+<p>Style Your Hair, Style Your Life ✨</p>
+
+</header>
+
+<nav>
+
+<a href="#services">Services</a>
+<a href="#gallery">Gallery</a>
+<a href="#booking">Book Appointment</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<h2>Our Services</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Hair Cut</h3>
+<p>Trendy & classic styles</p>
+<p class="price">₹300</p>
+</div>
+
+<div class="card">
+<h3>Hair Coloring</h3>
+<p>Professional color treatment</p>
+<p class="price">₹1200</p>
+</div>
+
+<div class="card">
+<h3>Hair Spa</h3>
+<p>Relax & nourish your hair</p>
+<p class="price">₹900</p>
+</div>
+
+<div class="card">
+<h3>Hair Smoothening</h3>
+<p>Silky smooth hair finish</p>
+<p class="price">₹3500</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section id="gallery">
+
+<h2>Our Work</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
+
+<img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1">
+
+<img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388">
+
+</div>
+
+</section>
+
+<!-- BOOKING -->
+
+<section id="booking">
+
+<h2>Book Appointment</h2>
+
+<form onsubmit="return bookAppointment()">
+
+<input type="text" id="name" placeholder="Your Name">
+
+<input type="date" id="date">
+
+<select id="service">
+
+<option value="">Select Service</option>
+<option>Hair Cut</option>
+<option>Hair Coloring</option>
+<option>Hair Spa</option>
+<option>Hair Smoothening</option>
+
+</select>
+
+<button type="submit">Book Now</button>
+
+<p id="success">✅ Appointment Booked Successfully!</p>
+
+</form>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2>Contact Us</h2>
+
+<p>📍puttur,hifi street</p>
+<p>📞 +91 8639406898</p>
+<p>📧 SriYoshithahairsalon@email.com</p>
+
+</section>
+
+<footer>
+
+<p>© Sri yoshitha hair saloon| All Rights Reserved</p>
+
+</footer>
+
+<!-- WHATSAPP -->
+
+<a class="whatsapp" href="https://wa.me/919876543210">Chat</a>
+
+<script>
+
+function bookAppointment(){
+
+let name=document.getElementById("name").value
+let date=document.getElementById("date").value
+let service=document.getElementById("service").value
+
+if(name==""||date==""||service==""){
+alert("Please fill all fields")
+return false
+}
+
+document.getElementById("success").style.display="block"
+
+return false
+}
+
+</script>
+
+</body>
+</html>
